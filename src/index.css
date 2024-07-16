@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ul{
+  list-style-type: none;
+  margin-top: 20px;
+  padding: 0;
+  display: grid;
+  grid-template-rows: 100px;
+  grid-template-columns: 4fr 0.5fr 0.5fr 0.5fr;
+}
+
+.title{
+font-size: 20px;
+font-family: Bahnschrift;
+
+}
+
