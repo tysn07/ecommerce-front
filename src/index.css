@@ -27,3 +27,34 @@ font-family: Bahnschrift;
 
 }
 
+.signup{
+  list-style-type: none;
+}
+
+.style2{
+  list-style-type: none;
+  display: inline-grid;
+  grid-template-rows: 20px 20px 20px 20px;
+}
+
+
+.inputstyle{
+  margin-bottom: 5px;
+
+}
+
+.navbutton{
+  border:10px;
+  background-color: white;
+  display: inline-block;
+  height: 30px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  color:purple;
+  font-size: 16px;
+
+}
+.navli{
+  text-decoration: none;
+
+}

@@ -1,6 +1,8 @@
 import Navbar from "../Navbar";
 import React,{useEffect,useState} from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
+
 
 
 function Login(){
@@ -24,8 +26,12 @@ function Login(){
         axios.post("http://localhost:8080/users/login",{
             email: usernamef,
             password: passwordf
+        }).then((response) => {
+            if(response.status === 200){
+            alert("로그인 성공");
+            window.location.reload()}
         }).catch((error)=>{
-              console.log(error.value)
+            alert('로그인 실패')
         });
 
     }
@@ -37,6 +43,7 @@ function Login(){
                 <input type="text" value={usernamef} placeholder="Username" onChange={handleInputId}/>
                 <input type="password" value={passwordf} placeholder="Password" onChange={handleInputPw}/>
                 <button onClick={confirmAndSend}>로그인</button>
+                <li className="signup"><Link to="/signup">회원가입</Link></li>
             </div>
         </>
     )
