@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import SignUpPage from "./Login/SignUpPage";
+import ShoppingCart from "./Shopping Cart";
 import {
     createBrowserRouter,
     RouterProvider,
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
     {
         path:"/signup",
         element: SignUpPage(),
-    }
+    },
+    {
+        path:"/cart",
+        element: ShoppingCart(),
+    },
 
 
 

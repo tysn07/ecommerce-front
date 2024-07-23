@@ -20,6 +20,7 @@ function Navbar(){
            <div className="ul">
                <li className="title">SonShop</li>
                <li><Link className="navli" to="/">홈</Link></li>
+               <li><Link className="navli" to="/cart">장바구니</Link></li>
                <button className="navbutton" onClick={deleteCookie}>로그아웃</button>
            </div>
        </div>
@@ -27,4 +28,5 @@ function Navbar(){
    )
    }
 }
+
 export default Navbar

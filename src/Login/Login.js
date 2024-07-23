@@ -29,7 +29,7 @@ function Login(){
         }).then((response) => {
             if(response.status === 200){
             alert("로그인 성공");
-            window.location.reload()}
+            window.location.href="http://localhost:3000/"}
         }).catch((error)=>{
             alert('로그인 실패')
         });

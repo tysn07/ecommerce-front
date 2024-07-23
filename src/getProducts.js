@@ -20,6 +20,7 @@ const arrayDataProduct = products.map(
             <Card
             title={product.name}
             price={product.price}
+            id={product.id}
             />
 )
 
