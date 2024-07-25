@@ -17,18 +17,20 @@ const Card = ({title,price,id}) => {
         if(localStorage.getItem(id+"%"+title)!=null){
         var current = parseInt(localStorage.getItem(id+"%"+title))}
         else{var current = 0}
-       localStorage.setItem(id+"%"+title,current+count);}
+       localStorage.setItem(id+"%"+title,current+count);
+        window.location.reload()
+        alert("장바구니에 추가 됐습니다")
+        }
         else alert("로그인을 해주십시오")
     };
     return(
         <>
             <div className={styles.card}>`
                 <h2 className={styles.cardTitle}>{title}</h2>
-                <p>{price}</p>
-                <p>{count}</p>
+                <p>{price}원</p>
                 <button  onClick={addCount}>+</button>
                 <button  onClick={subtractCount}>-</button>
-                <button className="navbutton" onClick={Add}>Add</button>
+                <button className="navbutton" onClick={Add}>{count}&nbsp;Add</button>
             `</div>
         </>
     );

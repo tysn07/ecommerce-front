@@ -17,30 +17,31 @@ function ShoppingCart(){
         basket.set(productId,quantity);
         displayBasket.set(productName,quantity)
     }
-    console.log(basket);
+
     const arr = Array.from(displayBasket).map(([productName,quantity])=>([productName,quantity]))
 
     const pushItem = () => {
         axios.post("http://localhost:8080/order",{
-            basket:basket,
+            basket:Object.fromEntries(basket),
             addressId:address,
-            credentials: 'include',
+
         }).catch((error)=>{
             alert('주문 실패')
-        })
-        console.log(basket)
+        }) .then(response => console.log(response))
+        localStorage.clear()
+        alert('주문 성공');
+        window.location.reload();
     }
-
+console.log(basket)
     return(
         <>
            <Navbar/>
             <ul>
-                {arr.map((arr, index) => <li className="basket" key={index}>{arr.at(0)} {arr.at(1)}</li>)}
+                {arr.map((arr, index) => <li className="basket" key={index}>상품:&nbsp;{arr.at(0)}&emsp;&emsp;&emsp;&emsp;수량:&nbsp;{arr.at(1)}개</li>)}
                 <button onClick={pushItem}>결제하기</button>
             </ul>
 
         </>
     )
 }
-
 export default ShoppingCart

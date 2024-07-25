@@ -15,6 +15,7 @@ function GetProducts(){
 
 
     }, []);
+
 const arrayDataProduct = products.map(
     product =>
             <Card

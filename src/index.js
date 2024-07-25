@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import SignUpPage from "./Login/SignUpPage";
 import ShoppingCart from "./Shopping Cart";
+import OrderPage from "./Order/OrderPage";
+import OrderDetail from "./Order/OrderDetail";
 import {
     createBrowserRouter,
     RouterProvider,
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
         path:"/cart",
         element: ShoppingCart(),
     },
+    {
+        path:"/orderHistory",
+        element: OrderPage(),
+    },
+    {
+        path:"/orderDetail/:orderId",
+        element: OrderDetail(),
+    },
 
 
 
@@ -37,7 +47,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <RouterProvider router={router} />
-
   </React.StrictMode>
 );
 
