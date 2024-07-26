@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-.ul{
+.navbar{
   list-style-type: none;
   margin-top: 20px;
   padding: 20px;
@@ -62,15 +62,30 @@ font-family: Bahnschrift;
 .expandable-div{
   border:1px solid;
   padding-left: 10px;
+  margin-bottom: 7px;
+  border-radius: 5px;
 }
 
 .expanded{
   border:1px solid;
   padding-left: 10px;
   padding-bottom: 10px;
+  margin-bottom: 7px;
+  border-radius: 5px;
 }
 
 .expanded-content{
   list-style-type: none;
   padding-left: 5px;
+}
+
+*:disabled{
+  background: transparent;
+  border: none;
+  font-size:0;
+}
+
+.detail{
+  margin-bottom: 5px;
+  margin-right: 5px;
 }

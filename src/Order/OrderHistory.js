@@ -21,6 +21,7 @@ function OrderHistory(){
             <OrderCard
              orderId={order.orderId}
              address={order.address}
+             state={order.state}
             />
 
     )
