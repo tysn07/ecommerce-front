@@ -1,5 +1,7 @@
 import axios from "axios";
-import Navbar from "./Navbar";
+import Navbar from "../Navbar";
+import {useState,useEffect} from "react";
+
 function ShoppingCart(){
 
     axios.defaults.withCredentials = true;
@@ -14,8 +16,10 @@ function ShoppingCart(){
         const productId = split[0];
         const productName = split[1];
         const quantity = localStorage.getItem(prepkey);
-        basket.set(productId,quantity);
-        displayBasket.set(productName,quantity)
+              basket.set(productId, quantity);
+              displayBasket.set(productName, quantity)
+
+
     }
 
     const arr = Array.from(displayBasket).map(([productName,quantity])=>([productName,quantity]))
@@ -32,7 +36,7 @@ function ShoppingCart(){
         alert('주문 성공');
         window.location.reload();
     }
-console.log(basket)
+
     return(
         <>
            <Navbar/>

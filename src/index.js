@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import SignUpPage from "./Login/SignUpPage";
-import ShoppingCart from "./Shopping Cart";
+import CartPage from "./Cart/CartPage";
 import OrderPage from "./Order/OrderPage";
-import OrderDetail from "./Order/OrderDetail";
+
 import {
     createBrowserRouter,
     RouterProvider,
@@ -28,16 +28,14 @@ const router = createBrowserRouter([
     },
     {
         path:"/cart",
-        element: ShoppingCart(),
+        element: CartPage(),
     },
     {
         path:"/orderHistory",
         element: OrderPage(),
-    },
-    {
-        path:"/orderDetail/:orderId",
-        element: OrderDetail(),
-    },
+    }
+
+
 
 
 

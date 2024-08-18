@@ -1,5 +1,6 @@
 import styles from './Card.module.css'
 import React, { useEffect, useState } from 'react';
+import axios from "axios";
 const Card = ({title,price,id}) => {
     const[count,setCount] = useState(0);
 
@@ -17,7 +18,7 @@ const Card = ({title,price,id}) => {
         if(localStorage.getItem(id+"%"+title)!=null){
         var current = parseInt(localStorage.getItem(id+"%"+title))}
         else{var current = 0}
-       localStorage.setItem(id+"%"+title,current+count);
+        localStorage.setItem(id+"%"+title,current+count);
         window.location.reload()
         alert("장바구니에 추가 됐습니다")
         }

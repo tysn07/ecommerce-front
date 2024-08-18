@@ -3,9 +3,8 @@ import React,{useEffect,useState} from "react";
 import Card from "./Card/Card";
 
 function GetProducts(){
+
     const [products, setproducts] = useState([]);
-
-
     useEffect(()=>{
         axios.get("http://localhost:8080/products/all")
             .then(response => {
