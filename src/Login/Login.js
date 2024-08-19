@@ -24,13 +24,13 @@ function Login(){
     }
 
     const confirmAndSend = () => {
-        axios.post("http://localhost:8080/users/login",{
+        axios.post("http://43.200.67.22:8080/users/login",{
             email: usernamef,
             password: passwordf
         }).then((response) => {
             if(response.status === 200){
             alert("로그인 성공");
-            window.location.href="http://localhost:3000/"}
+            window.location.href="http://43.201.135.127:3000/"}
         }).catch((error)=>{
             alert('로그인 실패')
         });

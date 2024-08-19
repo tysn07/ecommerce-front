@@ -26,7 +26,7 @@ function SignUp(){
     }
 
     const confirmAndSend = () => {
-        axios.post("http://localhost:8080/users/signup",{
+        axios.post("http://43.200.67.22:8080/users/signup",{
             email: email,
             username: usernamef,
             password: passwordf,
@@ -44,7 +44,6 @@ return(
     <><Navbar/>
         <h2>Sign Up</h2>
         <div className="style2">
-
             <input className="inputstyle" type="text" value={email} placeholder="Email" onChange={handleInputEmail}/>
             <input className="inputstyle" type="text" value={usernamef} placeholder="Username" onChange={handleInputId}/>
             <input className="inputstyle" type="password" value={passwordf} placeholder="Password" onChange={handleInputPw}/>
