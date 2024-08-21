@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4 
-    - run: npm install 
+    - run: npm install  --save-dev @babel/plugin-proposal-private-property-in-object 
     - run: npm run build 
    
 
