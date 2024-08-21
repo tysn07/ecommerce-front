@@ -6,7 +6,7 @@ function SignUp(){
     const[email,setEmail] = useState("");
     const[usernamef,setUsername] = useState("");
     const[passwordf,setPassword] = useState("");
-    const[adminToken,setadminToken] = useState("");
+
 
     const handleInputEmail = (e) =>{
         setEmail(e.target.value)
@@ -21,16 +21,13 @@ function SignUp(){
 
     }
 
-    const handleInputToken = (e) =>{
-        setadminToken(e.target.value)
-    }
+
 
     const confirmAndSend = () => {
         axios.post("http://43.200.67.22:8080/users/signup",{
             email: email,
             username: usernamef,
-            password: passwordf,
-            adminToken: adminToken
+            password: passwordf
         }).then((response) => {
             if(response.status === 200){
                 alert("회원가입 성공");}
@@ -48,7 +45,6 @@ return(
             <input className="inputstyle" type="text" value={usernamef} placeholder="Username" onChange={handleInputId}/>
             <input className="inputstyle" type="password" value={passwordf} placeholder="Password" onChange={handleInputPw}/>
             <button onClick={confirmAndSend}>회원가입</button>
-            <input className="inputstyle" value={adminToken} placeholder="admin token" onChange={handleInputToken}/>
         </div>
     </>
 

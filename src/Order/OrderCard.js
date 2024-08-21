@@ -29,7 +29,7 @@ const OrderCard = ({orderId,address,state}) => {
         setIsExpanded(!isExpanded);
     };
     const getDetails = () =>{
-        axios.get("http://localhost:8080/order/" + orderId)
+        axios.get("http://43.200.67.22:8080/order/" + orderId)
             .then(response => {
                 setdetails(response.data)
                 setIsExpanded(!isExpanded);
@@ -42,7 +42,7 @@ const OrderCard = ({orderId,address,state}) => {
 
     )
     const pay = () => {
-        axios.get("http://localhost:8080/payment/ready/"+orderId)
+        axios.get("http://43.200.67.22:8080/payment/ready/"+orderId)
             .then(response => {
                 window.location.href = response.data.next_redirect_pc_url
             });
