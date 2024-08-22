@@ -4,7 +4,7 @@ function Navbar() {
     const deleteCookie = (Authorization) => {
         document.cookie = `Authorization=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;`;
         window.location.reload();
-        window.location.href = "http://son7shop.com"
+        window.location.href = "https://son7shop.com"
         localStorage.clear()
     };
 

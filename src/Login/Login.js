@@ -30,7 +30,7 @@ function Login(){
         }).then((response) => {
             if(response.status === 200){
             alert("로그인 성공");
-            window.location.href="http://son7shop.com"}
+            window.location.href="https://son7shop.com"}
         }).catch((error)=>{
             alert('로그인 실패')
         });
