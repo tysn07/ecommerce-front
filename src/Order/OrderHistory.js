@@ -8,7 +8,7 @@ function OrderHistory(){
     const [orders,setorders] = useState([]);
 
     useEffect(()=>{
-        axios.get("http://43.200.67.22:8080/order/userorder")
+        axios.get("https://43.200.67.22:8080/order/userorder")
             .then(response => {
                 setorders(response.data)
                 console.log(response.data);
