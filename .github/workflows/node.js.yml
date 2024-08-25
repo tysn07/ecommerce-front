@@ -45,12 +45,12 @@ jobs:
 
     - name: docker stop container
       run: |
-        if [ $( docker ps -a -q -f name=ecommerce-project) ]; then
-           docker stop ecommerce-project
+        if [ $( docker ps -a -q -f name=ecommerce-front) ]; then
+           docker stop ecommerce-front
         fi
 
     - name: docker run new container
-      run: docker run --rm -it -d -p 3000:3000 --name ecommerce-project ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-front
+      run: docker run --rm -it -d -p 3000:3000 --name ecommerce-front ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-front
 
     - name: delete old docker image
       run: docker system prune -f     
