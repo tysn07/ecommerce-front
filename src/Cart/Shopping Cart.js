@@ -25,7 +25,7 @@ function ShoppingCart(){
     const arr = Array.from(displayBasket).map(([productName,quantity])=>([productName,quantity]))
 
     const pushItem = () => {
-        axios.post("https://43.200.67.22:8080/order",{
+        axios.post("http://43.200.67.22:8080/order",{
             basket:Object.fromEntries(basket),
             addressId:address,
 

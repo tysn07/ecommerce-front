@@ -24,7 +24,7 @@ function SignUp(){
 
 
     const confirmAndSend = () => {
-        axios.post("https://43.200.67.22:8080/users/signup",{
+        axios.post("http://43.200.67.22:8080/users/signup",{
             email: email,
             username: usernamef,
             password: passwordf
