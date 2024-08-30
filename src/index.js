@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         element: OrderPage(),
     },
     {
-        path:"/health",
+        path:"/actuator/health",
         element:<h3>OK</h3>
 
     }
