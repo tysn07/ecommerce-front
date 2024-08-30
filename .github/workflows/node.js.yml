@@ -39,6 +39,7 @@ jobs:
 
   run-docker-image-on-ec2:
     runs-on: self-hosted
+    needs: build
     steps:
     - name: docker pull
       run : docker pull ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-front
