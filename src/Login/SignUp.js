@@ -24,7 +24,7 @@ function SignUp(){
 
 
     const confirmAndSend = () => {
-        axios.post("http://43.200.67.22:8080/users/signup",{
+        axios.post("https://back.son7shop.com/users/signup",{
             email: email,
             username: usernamef,
             password: passwordf

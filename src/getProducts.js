@@ -6,7 +6,7 @@ function GetProducts(){
 
     const [products, setproducts] = useState([]);
     useEffect(()=>{
-        axios.get("http://43.200.67.22:8080/products/all")
+        axios.get("https://back.son7shop.com/products/all")
             .then(response => {
                 setproducts(response.data)
                 console.log(response.data);
