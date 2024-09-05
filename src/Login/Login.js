@@ -39,6 +39,7 @@ function Login(){
 
     const testCookie = () =>{
        console.log(document.cookie);
+        console.log("test")
 
     }
     return(
