@@ -37,6 +37,10 @@ function Login(){
 
     }
 
+    const testCookie = () =>{
+       console.log(document.cookie);
+
+    }
     return(
         <><Navbar/>
             <div className="login-wrapper">
@@ -44,6 +48,7 @@ function Login(){
                 <input type="text" value={usernamef} placeholder="Username" onChange={handleInputId}/>
                 <input type="password" value={passwordf} placeholder="Password" onChange={handleInputPw}/>
                 <button onClick={confirmAndSend}>로그인</button>
+                <button onClick={testCookie}>testCookie</button>
                 <li className="signup"><Link to="/signup">회원가입</Link></li>
             </div>
         </>
