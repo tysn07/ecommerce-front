@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 function Navbar() {
 
     const deleteCookie = (Authorization) => {
-        document.cookie = `Authorization=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.son7shop.com;`;
+        document.cookie = `Authorization=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=back.son7shop.com;`;
         window.location.reload();
         window.location.href = "https://son7shop.com"
         localStorage.clear()
