@@ -1,5 +1,16 @@
+import {useEffect, useState} from "react";
+import axios from "axios";
 function AddressDropmenu() {
-    const myArray = ["Item 1", "Item 2", "Item 3", "Item 4"];
+
+    const [address,setaddress] = useState([]);
+    useEffect(()=>{
+        axios.get("https://back.son7shop.com/users/address/list")
+            .then(response => {
+                setaddress(response.data)
+                console.log(response.data);
+            });
+
+    }, []);
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
@@ -21,9 +32,9 @@ function AddressDropmenu() {
 
     return (
         <div className="dropdown">
-            <button onClick={myFunction} className="dropbtn">Dropdown</button>
+            <button onClick={myFunction} className="dropbtn">주소</button>
             <div id="myDropdown" className="dropdown-content">
-                {myArray.map((item, index) => (
+                {address.map((item, index) => (
                     // Render a div for each item in the array
                     <div key={index}>
                         {item}
