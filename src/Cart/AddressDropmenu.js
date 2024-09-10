@@ -36,9 +36,9 @@ function AddressDropmenu() {
             <div id="myDropdown" className="dropdown-content">
                 {address.map((item, index) => (
                     // Render a div for each item in the array
-                    <div key={index}>
+                    <button key={index}>
                         {item}
-                    </div>
+                    </button>
                 ))}
             </div>
         </div>
