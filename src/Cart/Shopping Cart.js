@@ -1,5 +1,6 @@
 import axios from "axios";
 import Navbar from "../Navbar";
+import AddressDropmenu from "./AddressDropmenu";
 import {useState,useEffect} from "react";
 
 function ShoppingCart(){
@@ -37,11 +38,15 @@ function ShoppingCart(){
         window.location.reload();
     }
 
+
+
+
     return(
         <>
            <Navbar/>
             <ul>
                 {arr.map((arr, index) => <li className="basket" key={index}>상품:&nbsp;{arr.at(0)}&emsp;&emsp;&emsp;&emsp;수량:&nbsp;{arr.at(1)}개</li>)}
+                <AddressDropmenu/>
                 <button onClick={pushItem}>결제하기</button>
             </ul>
 
