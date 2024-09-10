@@ -15,7 +15,7 @@ function AddressDropmenu() {
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
-function addressSelect(a){
+const addressSelect = (a) =>{
 setselect(a);
 }
 
@@ -39,7 +39,7 @@ setselect(a);
             <div id="myDropdown" className="dropdown-content">
                 {address.map((item, index) => (
                     // Render a div for each item in the array
-                    <div onClick={addressSelect(item)} key={index}>
+                    <div onClick={() => addressSelect(item)} key={index}>
                         {item}
                     </div>
                 ))}
