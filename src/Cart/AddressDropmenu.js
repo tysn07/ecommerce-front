@@ -34,6 +34,7 @@ setselect(a);
     }
 
     return (
+        <div className="aligncart">
         <div className="dropdown">
             <button onClick={myFunction} className="dropbtn">주소</button>
             <div id="myDropdown" className="dropdown-content">
@@ -44,8 +45,9 @@ setselect(a);
                     </div>
                 ))}
             </div>
-            <h>{select}</h>
         </div>
+    <h>{select}</h>
+    </div>
     );
 
 }

@@ -136,6 +136,17 @@ font-family: Bahnschrift;
   display: block;
 }
 
+.aligncart{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+
+}
+
+.paybutton{
+  padding-left:10px;
+}
+
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
 

@@ -47,7 +47,7 @@ function ShoppingCart(){
             <ul>
                 {arr.map((arr, index) => <li className="basket" key={index}>상품:&nbsp;{arr.at(0)}&emsp;&emsp;&emsp;&emsp;수량:&nbsp;{arr.at(1)}개</li>)}
                 <AddressDropmenu/>
-                <button onClick={pushItem}>결제하기</button>
+                <button className="paybutton" onClick={pushItem}>결제하기</button>
             </ul>
 
         </>
