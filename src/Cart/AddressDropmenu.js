@@ -3,6 +3,7 @@ import axios from "axios";
 function AddressDropmenu() {
 
     const [address,setaddress] = useState([]);
+    const [select,setselect] = useState([]);
     useEffect(()=>{
         axios.get("https://back.son7shop.com/users/address/list")
             .then(response => {
@@ -14,7 +15,9 @@ function AddressDropmenu() {
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
-
+function addressSelect(a){
+setselect(a);
+}
 
 // Close the dropdown menu if the user clicks outside of it
     window.onclick = function(event) {
@@ -36,11 +39,12 @@ function AddressDropmenu() {
             <div id="myDropdown" className="dropdown-content">
                 {address.map((item, index) => (
                     // Render a div for each item in the array
-                    <button key={index}>
+                    <div onClick={addressSelect(item)} key={index}>
                         {item}
-                    </button>
+                    </div>
                 ))}
             </div>
+            <h>{select}</h>
         </div>
     );
 
