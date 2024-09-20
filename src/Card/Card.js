@@ -1,7 +1,7 @@
 import styles from './Card.module.css'
 import React, { useEffect, useState } from 'react';
-import axios from "axios";
-const Card = ({title,price,id}) => {
+
+const Card = ({title,price,id,url}) => {
     const[count,setCount] = useState(0);
 
     function addCount(){
@@ -28,6 +28,7 @@ const Card = ({title,price,id}) => {
         <>
             <div className={styles.card}>`
                 <h2 className={styles.cardTitle}>{title}</h2>
+                <img src={url} alt={""}></img>
                 <p>{price}원</p>
                 <button  onClick={addCount}>+</button>
                 <button  onClick={subtractCount}>-</button>
