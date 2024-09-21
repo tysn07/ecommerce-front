@@ -1,7 +1,7 @@
 import styles from './Card.module.css'
 import React, { useEffect, useState } from 'react';
 
-const Card = ({title,price,id,url}) => {
+const Card = ({title,price,id,imageUrl}) => {
     const[count,setCount] = useState(0);
 
     function addCount(){
@@ -28,7 +28,7 @@ const Card = ({title,price,id,url}) => {
         <>
             <div className={styles.card}>`
                 <h2 className={styles.cardTitle}>{title}</h2>
-                <img src={url} alt={""}></img>
+                <img src={imageUrl} alt={""} className={styles.cardImage}></img>
                 <p>{price}원</p>
                 <button  onClick={addCount}>+</button>
                 <button  onClick={subtractCount}>-</button>

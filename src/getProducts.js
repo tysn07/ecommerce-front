@@ -21,7 +21,7 @@ const arrayDataProduct = products.map(
             title={product.name}
             price={product.price}
             id={product.id}
-            url={product.imageUrl}
+            imageUrl={product.imageUrl}
             />
 )
 
