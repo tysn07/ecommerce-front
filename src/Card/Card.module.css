@@ -7,9 +7,9 @@
     padding: 50px;
     cursor: pointer;
     text-align:center;
-    max-width:250px;
     display: inline-block;
     overflow: hidden;
+
 }
 
 .card-title{
@@ -17,10 +17,8 @@
 
 }
 
-.card-image{
-    width: 100%; /* Makes it responsive */
-    height: auto; /* Maintains aspect ratio */
-    display: block; /* Centers it within the card */
-    margin: 0 auto;
+.card .card-image{
+    max-width: 10px;
+
 
 }

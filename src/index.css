@@ -6,7 +6,7 @@
   padding: 20px;
   display: grid;
   grid-template-rows: 100px;
-  grid-template-columns: 4fr 0.5fr 0.5fr 0.5fr 0.5fr;
+  grid-template-columns: 4fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
 }
 
 .adminnavbar{
@@ -101,11 +101,13 @@ font-family: Bahnschrift;
 
 .dropbtn {
   background-color: #3498DB;
-  color: white;
+  color:black;
   padding: 16px;
   font-size: 16px;
-  border: none;
   cursor: pointer;
+  width: 100px;
+  margin-top: 10px;
+
 }
 
 /* Dropdown button on hover & focus */
@@ -147,8 +149,20 @@ font-family: Bahnschrift;
   padding-left:10px;
 }
 
+.alignprofile{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
 
+}
 
+.normalsize{
+  width:100px
+}
+
+.undisplay{
+  margin-bottom: 10px;
+}
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
 

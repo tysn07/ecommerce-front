@@ -12,6 +12,7 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import LoginPage from "./Login/LoginPage";
+import ProfilePage from "./Profile/ProfilePage";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
     {
         path:"/orderHistory",
         element: OrderPage(),
+    },
+    {
+        path:"/profile",
+        element:ProfilePage()
     }
 
 
