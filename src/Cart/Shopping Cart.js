@@ -26,18 +26,18 @@ function ShoppingCart(){
     const pushItem = () => {
         axios.post("https://back.son7shop.com/order",{
             basket:Object.fromEntries(basket),
-            addressId:address,
-
+            address:select,
+        }) .then(response => {
+            localStorage.clear();
+            alert('주문 성공');
+            window.location.reload();
         }).catch((error)=>{
             alert('주문 실패')
-        }) .then(response => console.log(response))
-        localStorage.clear()
-        alert('주문 성공');
-        window.location.reload();
+        })
     }
 
     useEffect(()=>{
-        axios.get("https://back.son7shop.com/users/address/list")
+        axios.get("https://back.son7shop.com/address/list")
             .then(response => {
                 setaddress(response.data)
                 console.log(response.data);
@@ -48,8 +48,8 @@ function ShoppingCart(){
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
-    const addressSelect = (a) =>{
-        setselect(a);
+    const addressSelect = (e) =>{
+        setselect(e);
     }
 
     window.onclick = function(event) {
@@ -64,31 +64,41 @@ function ShoppingCart(){
             }
         }
     }
-
-    return(
+       if(basket.size !== 0) {
+           return (
+               <>
+                   <Navbar/>
+                   <ul>
+                       {arr.map((arr, index) => <li className="basket"
+                                                    key={index}>상품:&nbsp;{arr.at(0)}&emsp;&emsp;&emsp;&emsp;수량:&nbsp;{arr.at(1)}개</li>)}
+                       <div className="aligncart">
+                           <div className="dropdown">
+                               <button onClick={myFunction} className="dropbtn">주소</button>
+                               <div id="myDropdown" className="dropdown-content">
+                                   {address.map((item, index) => (
+                                       <div onClick={() => addressSelect(item)} key={index}>
+                                           {item}
+                                       </div>
+                                   ))}
+                               </div>
+                           </div>
+                           <h>{select}</h>
+                       </div>
+                       <button className="paybutton" onClick={pushItem}>주문하기</button>
+                   </ul>
+               </>
+           )
+       }
+    else if(basket.size === 0)  return(
         <>
            <Navbar/>
-            <ul>
-                {arr.map((arr, index) => <li className="basket" key={index}>상품:&nbsp;{arr.at(0)}&emsp;&emsp;&emsp;&emsp;수량:&nbsp;{arr.at(1)}개</li>)}
-                <div className="aligncart">
-                    <div className="dropdown">
-                        <button onClick={myFunction} className="dropbtn">주소</button>
-                        <div id="myDropdown" className="dropdown-content">
-                            {address.map((item, index) => (
-                                // Render a div for each item in the array
-                                <div onClick={() => addressSelect(item)} key={index}>
-                                    {item}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                    <h>{select}</h>
-                </div>
-                <button className="paybutton" onClick={pushItem}>주문하기</button>
-            </ul>
-
+           <div>
+               <h3>
+                   NO ITEM
+               </h3>
+           </div>
         </>
-    )
-}
+           )
 
+}
 export default ShoppingCart
