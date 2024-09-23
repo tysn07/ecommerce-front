@@ -50,9 +50,9 @@ const OrderCard = ({orderId,address,state}) => {
 
     return(
         <div className={`expandable-div ${isExpanded ? 'expanded' : ''}`} onClick={toggleExpand}>
-            <h2>{orderId}</h2>
-            <p>{address}</p>
-            <p>{state}</p>
+            <h2>고유번호: {orderId}</h2>
+            <p>주소: {address}</p>
+            <p>상태: {state}</p>
            <button className="detail" onClick={getDetails}>{textSwitch}</button>
             <button disabled={payed} onClick={pay}>결제</button>
             {isExpanded && (
